@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title, meta, Open Graph, favicon, fonts and JSON-LD are all injected from
+       config/site.config.js by js/render.js. The values below are placeholders. -->
+  <title>launchfolio</title>
+  <meta name="description" content="A personal portfolio built with launchfolio." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="wordmark" href="#top" id="wordmark" aria-label="Home"></a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary"></nav>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__watermark" id="hero-watermark"></span>
+        <svg class="hero__lines" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M-50,120 C300,60 500,260 850,180 1100,120 1300,240 1300,240" />
+            <path d="M-50,300 C280,240 560,420 900,320 1120,255 1300,380 1300,380" />
+            <path d="M-50,480 C320,420 520,560 880,470 1140,405 1300,520 1300,520" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow" id="hero-eyebrow"></p>
+          <h1 class="hero__title" id="hero-title"></h1>
+          <p class="hero__lead" id="hero-lead"></p>
+          <ul class="hero__chips" id="hero-chips" aria-label="Affiliations"></ul>
+          <div class="hero__actions" id="hero-actions"></div>
+        </div>
+        <div class="hero__portrait" id="hero-portrait"></div>
+      </div>
+
+      <div class="hero__now" aria-label="Currently">
+        <div class="wrap hero__now-inner">
+          <span class="hero__now-label">Now</span>
+          <ul id="now-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--about" id="about" data-section="about">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__index" data-index></span>
+          <h2 class="section__title" data-title></h2>
+        </div>
+        <div class="about__grid">
+          <p class="about__lead" id="about-lead"></p>
+          <div class="pillars" id="about-pillars"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section--work" id="work" data-section="experience">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__index" data-index></span>
+          <h2 class="section__title" data-title></h2>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- RESEARCH / BACKGROUND -->
+    <section class="section section--research" id="research" data-section="research">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__index" data-index></span>
+          <h2 class="section__title" data-title></h2>
+        </div>
+
+        <div class="research__grid">
+          <div class="research__lead">
+            <p class="research__program" id="research-program"></p>
+            <p class="research__school" id="research-school"></p>
+            <p class="research__text" id="research-text"></p>
+            <ul class="tags" id="research-themes"></ul>
+          </div>
+          <div class="foundations">
+            <div class="found-block" id="fb-education">
+              <h3 class="found-title">Education</h3>
+              <ul class="edu" id="education"></ul>
+            </div>
+            <div class="found-block" id="fb-certs">
+              <h3 class="found-title">Certifications</h3>
+              <ul class="certs" id="certifications"></ul>
+            </div>
+            <div class="found-block" id="fb-langs">
+              <h3 class="found-title">Languages</h3>
+              <ul class="langs" id="languages"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="halo" id="project" aria-label="Featured project"></div>
+
+        <div class="skills" id="skills-block">
+          <h3 class="found-title">Toolkit</h3>
+          <div class="skills__grid" id="skills"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section class="section section--writing" id="writing" data-section="writing">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__index" data-index></span>
+          <h2 class="section__title" data-title></h2>
+        </div>
+        <p class="writing__intro" id="writing-intro"></p>
+        <div class="tabs" id="writing-tabs" role="tablist" aria-label="Choose a writing track"></div>
+        <div class="cards" id="panel-writing" role="tabpanel"></div>
+        <div class="writing__foot">
+          <a class="linkout" id="writing-more" href="#" target="_blank" rel="noopener">See all posts <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPEAKING -->
+    <section class="section section--speaking" id="speaking" data-section="speaking">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__index" data-index></span>
+          <h2 class="section__title" data-title></h2>
+        </div>
+        <p class="speaking__intro" id="speaking-intro"></p>
+        <div class="talk-feature" id="talk-feature"></div>
+        <div class="talks-more" id="talks-more-wrap">
+          <h3 class="found-title">Earlier talks</h3>
+          <ul id="talks-more"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--contact" id="contact" data-section="contact">
+      <div class="wrap">
+        <div class="contact__inner">
+          <p class="eyebrow" id="contact-eyebrow"></p>
+          <h2 class="contact__title" id="contact-title"></h2>
+          <a class="contact__email" id="contact-email" href="#"></a>
+          <ul class="socials" id="socials"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__mark" id="footer-mark"></span>
+      <span class="footer__note" id="footer-note"></span>
+      <a class="footer__top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <noscript>
+    <p style="padding:24px;font-family:system-ui;color:#ECEAE1;background:#0E1428">
+      This portfolio renders with JavaScript. Please enable it, or contact via the email in the config.
+    </p>
+  </noscript>
+
+  <!-- Order matters: config first, then optional fetched writing, then the renderer. -->
+  <script src="config/site.config.js"></script>
+  <script src="content/writing.js"></script>
+  <script src="js/render.js"></script>
+</body>
+</html>

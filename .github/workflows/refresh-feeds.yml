@@ -1,0 +1,32 @@
+name: Refresh writing feeds
+
+# Re-pulls posts from your configured sources and commits content/writing.js
+# when it changes. Runs weekly and on demand.
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node tools/fetch-feeds.mjs
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain content/writing.js)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/writing.js
+            git commit -m "chore: refresh writing feeds"
+            git push
+          else
+            echo "No feed changes."
+          fi

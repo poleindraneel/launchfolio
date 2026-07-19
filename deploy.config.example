@@ -1,0 +1,11 @@
+# launchfolio deploy settings — copy to `deploy.config` and fill in.
+# `deploy.config` is gitignored so your resource names stay out of git.
+
+# ---- Azure App Service (scripts/deploy-azure.sh) ----
+AZURE_RESOURCE_GROUP="my-portfolio-rg"
+AZURE_APP_NAME="my-portfolio-app"
+
+# ---- AWS S3 + CloudFront (scripts/deploy-aws.sh) ----
+AWS_S3_BUCKET="my-portfolio-bucket"
+AWS_CLOUDFRONT_DISTRIBUTION_ID="E1XXXXXXXXXXXX"   # optional; blank = skip CDN invalidation
+AWS_REGION="eu-central-1"

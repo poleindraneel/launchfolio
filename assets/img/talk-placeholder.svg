@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Placeholder talk image">
+  <rect width="640" height="400" fill="#131B34"/>
+  <rect x="120" y="70" width="400" height="210" rx="8" fill="#0E1428" stroke="#57C4B6" stroke-opacity="0.5" stroke-width="3"/>
+  <g fill="#57C4B6" opacity="0.6">
+    <rect x="150" y="104" width="180" height="14" rx="7"/>
+    <rect x="150" y="136" width="320" height="10" rx="5"/>
+    <rect x="150" y="158" width="280" height="10" rx="5"/>
+    <rect x="150" y="180" width="300" height="10" rx="5"/>
+  </g>
+  <rect x="300" y="280" width="40" height="70" fill="#222D50"/>
+  <rect x="250" y="350" width="140" height="10" rx="5" fill="#222D50"/>
+  <text x="320" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#A7AEC2" opacity="0.8">talk photo → assets/img/</text>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "name": "launchfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A clone-and-replace static portfolio template. Edit one config file, connect your content sources, and publish to Azure, AWS or GitHub Pages.",
+  "license": "MIT",
+  "author": "Indraneel Pole",
+  "homepage": "https://github.com/poleindraneel/launchfolio",
+  "repository": { "type": "git", "url": "https://github.com/poleindraneel/launchfolio.git" },
+  "keywords": ["portfolio", "template", "static-site", "personal-website", "resume", "azure", "aws", "github-pages"],
+  "scripts": {
+    "dev": "bash scripts/serve.sh",
+    "fetch": "node tools/fetch-feeds.mjs",
+    "deploy:azure": "bash scripts/deploy-azure.sh",
+    "deploy:aws": "bash scripts/deploy-aws.sh"
+  },
+  "engines": { "node": ">=18" }
+}

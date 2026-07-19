@@ -1,0 +1,10 @@
+# Deploy secrets / resource names
+deploy.config
+
+# Build / temp artifacts
+*.zip
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
