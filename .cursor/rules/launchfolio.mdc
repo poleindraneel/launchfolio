@@ -1,0 +1,12 @@
+---
+description: launchfolio — how to edit this portfolio template
+alwaysApply: true
+---
+
+Follow **AGENTS.md** in the repo root — it is the single source of truth.
+
+Key rules:
+- To change anything a visitor sees, edit ONLY `config/site.config.js`.
+- Do not edit `js/render.js`, `css/styles.css`, or `index.html` for content/theme changes.
+- Validate with `npm run check` after editing; fix errors, clear placeholder warnings.
+- No dependencies, no build step — keep it static.

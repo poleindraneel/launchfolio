@@ -1,0 +1,26 @@
+# launchfolio
+
+> An agent-native, dependency-free static portfolio template. All content lives in one file
+> (config/site.config.js); a small vanilla-JS renderer builds the page. Point your coding
+> agent at it and it can set up, validate, and deploy a portfolio in one prompt.
+
+For AI agents editing this project: read AGENTS.md first. To change anything a visitor sees,
+edit only config/site.config.js; validate with `npm run check`. Do not read/edit
+js/render.js, css/styles.css, or index.html for content or theme changes.
+
+## Key files
+- [AGENTS.md](AGENTS.md): how an agent should work on a launchfolio site (golden rule, recipes, validate loop).
+- [config/site.config.js](config/site.config.js): the single source of truth — the only file to edit for content/theme.
+- [config/site.schema.json](config/site.schema.json): the config contract (types, required fields, allowed values).
+- [tools/validate-config.mjs](tools/validate-config.mjs): `npm run check` — validates the config, lists errors + placeholder to-dos.
+
+## Docs
+- [README.md](README.md): overview, quickstart, feature list.
+- [docs/CONFIGURATION.md](docs/CONFIGURATION.md): every config field explained.
+- [docs/SOURCES.md](docs/SOURCES.md): connect writing sources (Medium/Substack/dev.to/RSS).
+- [docs/DEPLOY.md](docs/DEPLOY.md): deploy to GitHub Pages / Azure / AWS.
+
+## Links
+- Repo: https://github.com/poleindraneel/launchfolio
+- Live demo: https://poleindraneel.github.io/launchfolio/
+- Example site: https://indraneelpole.name

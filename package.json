@@ -10,6 +10,7 @@
   "keywords": ["portfolio", "template", "static-site", "personal-website", "resume", "azure", "aws", "github-pages"],
   "scripts": {
     "dev": "bash scripts/serve.sh",
+    "check": "node tools/validate-config.mjs",
     "fetch": "node tools/fetch-feeds.mjs",
     "deploy:azure": "bash scripts/deploy-azure.sh",
     "deploy:aws": "bash scripts/deploy-aws.sh"
