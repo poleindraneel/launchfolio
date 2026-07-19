@@ -4,8 +4,10 @@ All notable changes to launchfolio are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project
 aims to follow [Semantic Versioning](https://semver.org/).
 
-## [1.1.0] — Agent-native
-### Added
+## [1.0.0] — 2026-07-19
+First public release.
+
+### Added — agent-native
 - **`AGENTS.md`** — the cross-tool guide agents read (golden rule, read-map, inline enums,
   task recipes, validate loop, one-prompt setup). Thin wrappers: `CLAUDE.md` (`@AGENTS.md`
   import), `.cursor/rules/launchfolio.mdc`, `.github/copilot-instructions.md`.
@@ -14,12 +16,8 @@ aims to follow [Semantic Versioning](https://semver.org/).
 - **`tools/validate-config.mjs`** and **`npm run check`** — zero-dependency validator that
   reports precise errors and a to-do list of leftover placeholders (the agent's success signal).
 - **`llms.txt`** — concise LLM-facing map of the repo.
-- README repositioned to lead with the agent-native setup flow.
 
-## [1.0.0] — 2026-07-19
-First public release.
-
-### Added
+### Added — template
 - **Single-file configuration** (`config/site.config.js`): identity, theme, links and every
   section come from one `window.SITE` object; rendered by dependency-free vanilla JS.
 - **Toggleable, config-driven sections** — hero, about, experience, research/background,
