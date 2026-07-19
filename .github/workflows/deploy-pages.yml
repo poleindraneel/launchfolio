@@ -24,12 +24,9 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # Requires Pages to be enabled once: Settings → Pages → Source: "GitHub Actions".
+      # (The workflow's GITHUB_TOKEN can deploy to Pages but cannot create the site.)
       - uses: actions/configure-pages@v5
-        with:
-          # Let the workflow enable Pages on first run, so cloners don't have to
-          # flip Settings → Pages manually. Requires the `pages: write` permission
-          # granted below.
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
