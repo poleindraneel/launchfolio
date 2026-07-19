@@ -86,3 +86,6 @@ npm run check      # validates config/site.config.js against the contract
 > "Read AGENTS.md, then set up this portfolio for me from the attached resume / my LinkedIn
 > export. Fill `config/site.config.js`, disable sections I have no content for, run
 > `npm run check` until it's clean, and show me a preview."
+
+More copy-paste prompts for humans (theming, adding content, connecting writing, deploying):
+**`docs/AGENT-PROMPTS.md`**.

@@ -10,6 +10,7 @@ js/render.js, css/styles.css, or index.html for content or theme changes.
 
 ## Key files
 - [AGENTS.md](AGENTS.md): how an agent should work on a launchfolio site (golden rule, recipes, validate loop).
+- [docs/AGENT-PROMPTS.md](docs/AGENT-PROMPTS.md): copy-paste prompts a human can give their agent.
 - [config/site.config.js](config/site.config.js): the single source of truth — the only file to edit for content/theme.
 - [config/site.schema.json](config/site.schema.json): the config contract (types, required fields, allowed values).
 - [tools/validate-config.mjs](tools/validate-config.mjs): `npm run check` — validates the config, lists errors + placeholder to-dos.

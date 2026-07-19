@@ -37,6 +37,10 @@ Works with any tool that reads **AGENTS.md** (Claude Code, Cursor, Codex, Copilo
 Gemini CLI, Windsurf…); `CLAUDE.md`, `.cursor/rules`, and Copilot instructions are included as
 thin wrappers.
 
+**Not sure what to say to your agent?** See **[docs/AGENT-PROMPTS.md](docs/AGENT-PROMPTS.md)** —
+copy-paste prompts for setup-from-résumé, theming, adding content, connecting your writing,
+and deploying.
+
 ## Why
 
 Most portfolio templates make you fight a framework and a build pipeline to change your
