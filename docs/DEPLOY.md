@@ -7,7 +7,7 @@ Copy `deploy.config.example` → `deploy.config` and fill in your values first
 
 ---
 
-## GitHub Pages (free, zero infra)
+## GitHub Pages using GitHub Actions (free, zero infra)
 1. Push the repo to GitHub.
 2. **Settings → Pages → Build and deployment → Source: “GitHub Actions”.**
 3. The included `.github/workflows/deploy-pages.yml` publishes on every push to `main`.
