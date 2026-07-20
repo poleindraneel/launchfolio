@@ -9,7 +9,7 @@ edit by hand. No framework, no build step, no dependencies.
 **[Use this template](https://github.com/poleindraneel/launchfolio/generate)** &nbsp;·&nbsp;
 MIT licensed &nbsp;·&nbsp; ⭐ **Star it if it saves you an afternoon**
 
-![launchfolio — edit one config file, the site rerenders](docs/demo.gif)
+![launchfolio — point your AI agent at it: it edits one config file, validates, and deploys](docs/demo.gif)
 
 > Built by [Indraneel Pole](https://github.com/poleindraneel). A real-world site running on
 > launchfolio: **[indraneelpole.name](https://indraneelpole.name)**.
@@ -58,6 +58,9 @@ drive it in one shot.
   add LinkedIn/manual posts by hand. One command, or a weekly GitHub Action.
 - **Live project roadmap.** Point a featured project at a **public GitHub repo** and its
   roadmap syncs from the repo's Milestones (with a static fallback).
+- **Privacy-friendly analytics (opt-in).** Cookieless page views + automatic **outbound
+  click-through** tracking, so you can see which of your content links people actually click.
+  Off by default; Plausible / Umami / GoatCounter. See [docs/ANALYTICS.md](docs/ANALYTICS.md).
 - **Themable in seconds.** Colours + Google Fonts are config values.
 - **One-command deploys.** GitHub Pages (free), Azure App Service, AWS S3 + CloudFront.
 - **Fast & accessible.** Static files, keyboard-navigable, `prefers-reduced-motion`, mobile-first,

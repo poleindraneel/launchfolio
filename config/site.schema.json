@@ -68,6 +68,19 @@
       "type": "object",
       "properties": { "mark": { "type": "string" }, "note": { "type": "string" } }
     },
+    "analytics": {
+      "type": "object",
+      "description": "Optional, privacy-friendly analytics. Off unless provider is set.",
+      "properties": {
+        "provider": { "enum": ["none", "plausible", "umami", "goatcounter"] },
+        "respectDNT": { "type": "boolean" },
+        "trackOutboundClicks": { "type": "boolean" },
+        "domain": { "type": "string" },
+        "websiteId": { "type": "string" },
+        "endpoint": { "type": "string" },
+        "scriptUrl": { "type": "string" }
+      }
+    },
     "sections": {
       "type": "object",
       "properties": {

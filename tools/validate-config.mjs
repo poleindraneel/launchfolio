@@ -78,6 +78,19 @@ function validate(C) {
     if (f && !nonEmpty(f.display) && !nonEmpty(f.body)) warn("theme.fonts", "no display/body font set");
   }
 
+  // ---- analytics (optional) ----
+  if (isObj(C.analytics)) {
+    const an = C.analytics;
+    const provs = ["none", "plausible", "umami", "goatcounter"];
+    if (an.provider !== undefined && !provs.includes(an.provider)) err("analytics.provider", `must be one of: ${provs.join(", ")} (got "${an.provider}")`);
+    if (an.provider === "plausible" && !nonEmpty(an.domain)) err("analytics.domain", 'required when provider is "plausible" (your data-domain)');
+    if (an.provider === "umami") {
+      if (!nonEmpty(an.websiteId)) err("analytics.websiteId", 'required when provider is "umami"');
+      if (!nonEmpty(an.scriptUrl) && !nonEmpty(an.endpoint)) err("analytics.scriptUrl", 'umami needs "scriptUrl" or "endpoint" (where umami.js is hosted)');
+    }
+    if (an.provider === "goatcounter" && !nonEmpty(an.endpoint)) err("analytics.endpoint", 'required when provider is "goatcounter" (your count endpoint)');
+  }
+
   // ---- sections ----
   if (!isObj(C.sections)) { err("sections", "missing object"); return; }
   const S = C.sections;

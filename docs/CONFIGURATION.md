@@ -43,6 +43,13 @@ fill in appear (in the Contact section and in the JSON-LD `sameAs`).
 ## `footer`
 `mark` (small wordmark) and `note`.
 
+## `analytics` (optional, off by default)
+Privacy-friendly, pluggable analytics + outbound click-through tracking. With
+`provider: "none"` nothing loads. Fields: `provider` (`none|plausible|umami|goatcounter`),
+`respectDNT` (bool), `trackOutboundClicks` (bool), and provider-specific `domain` (plausible),
+`websiteId` (umami), `endpoint` (goatcounter), `scriptUrl` (self-host override). `npm run check`
+validates that the required field for your provider is set. Full guide: **[ANALYTICS.md](ANALYTICS.md)**.
+
 ## `sections`
 Each section has `enabled` (set `false` to remove it **and** its nav link) and a
 `navLabel`. Section order on the page is the order in `index.html`; toggling here never

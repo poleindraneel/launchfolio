@@ -4,6 +4,17 @@ All notable changes to launchfolio are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project
 aims to follow [Semantic Versioning](https://semver.org/).
 
+## [1.0.1]
+### Added
+- **Privacy-friendly analytics module (opt-in, off by default)** — a config `analytics` block
+  that plugs into Plausible, Umami or GoatCounter. Cookieless, honours Do Not Track, and loads
+  nothing while `provider: "none"`.
+- **Outbound click-through tracking** — an `outbound_click` event fires when visitors click out
+  to your connected content (writing cards, social links, CTAs, repo links), carrying
+  `{ destination, section, label }` so you can see which sources actually get traffic.
+- Validated by `npm run check`; documented in `docs/ANALYTICS.md` + config schema + AGENTS.md.
+  Resolves #9.
+
 ## [1.0.0] — 2026-07-19
 First public release.
 

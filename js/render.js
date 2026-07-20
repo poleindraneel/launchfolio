@@ -104,6 +104,52 @@
   }
   function absolute(path, base) { if (/^https?:/.test(path) || !base) return path; return base.replace(/\/$/, "") + "/" + path.replace(/^\//, ""); }
 
+  /* ======================================================= ANALYTICS (opt-in) */
+  var A = C.analytics || {};
+  var ANALYTICS_ON = !!(A.provider && A.provider !== "none");
+  function dntOn() {
+    if (A.respectDNT === false) return false;
+    var d = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+    return d === "1" || d === "yes";
+  }
+  function applyAnalytics() {
+    if (!ANALYTICS_ON || dntOn()) { ANALYTICS_ON = false; return; } // off => zero third-party requests
+    try {
+      if (A.provider === "plausible") {
+        // queue custom events until the script loads
+        window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
+        injectHead("script", { defer: "", "data-domain": A.domain || "", src: A.scriptUrl || "https://plausible.io/js/script.tagged-events.js" });
+      } else if (A.provider === "umami") {
+        injectHead("script", { defer: "", "data-website-id": A.websiteId || "", src: A.scriptUrl || A.endpoint || "" });
+      } else if (A.provider === "goatcounter") {
+        injectHead("script", { async: "", "data-goatcounter": A.endpoint || "", src: A.scriptUrl || "//gc.zgo.at/count.js" });
+      }
+    } catch (e) { /* analytics must never break the page */ }
+  }
+  function trackOutbound(destination, section, label) {
+    if (!ANALYTICS_ON) return;
+    try {
+      if (A.provider === "plausible" && window.plausible) window.plausible("outbound_click", { props: { destination: destination, section: section, label: label } });
+      else if (A.provider === "umami" && window.umami) window.umami.track("outbound_click", { destination: destination, section: section, label: label });
+      else if (A.provider === "goatcounter" && window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "outbound: " + destination, title: label, event: true });
+    } catch (e) {}
+  }
+  function wireOutboundTracking() {
+    if (!ANALYTICS_ON || A.trackOutboundClicks === false) return;
+    document.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a) return;
+      if (!/^https?:\/\//i.test(a.getAttribute("href") || "")) return;
+      var u; try { u = new URL(a.href); } catch (_) { return; }
+      if (u.hostname === location.hostname) return; // internal link — ignore
+      var secEl = a.closest("[data-section]");
+      var section = secEl ? secEl.getAttribute("data-section")
+        : (a.closest("header") ? "nav" : a.closest("footer") ? "footer" : "hero");
+      var label = (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80) || a.getAttribute("aria-label") || "";
+      trackOutbound(u.hostname + u.pathname, section, label);
+    }, { capture: true });
+  }
+
   /* ======================================================= NAV + numbering */
   function buildNavAndSections() {
     var navLinks = $("#nav-links");
@@ -504,9 +550,11 @@
   /* ======================================================= GO */
   applyTheme();
   setMeta();
+  applyAnalytics();
   renderWordmark();
   renderHero();
   buildNavAndSections();
   renderFooter();
   wireInteractions();
+  wireOutboundTracking();
 })();

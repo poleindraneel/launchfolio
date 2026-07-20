@@ -96,6 +96,23 @@ window.SITE = {
     note: "Built with launchfolio — an open static portfolio template.",
   },
 
+  /* ---- Analytics (optional, privacy-friendly, OFF by default) -------------
+   * Measures profile visits AND click-throughs to your connected sources
+   * (Medium/Substack/socials/CTAs → an `outbound_click` event with which
+   * section + destination). No cookies, honours Do Not Track, and loads
+   * nothing at all while `provider: "none"`. See docs/ANALYTICS.md.       */
+  analytics: {
+    provider: "none",           // "none" | "plausible" | "umami" | "goatcounter"
+    respectDNT: true,           // honour the visitor's Do Not Track setting
+    trackOutboundClicks: true,  // fire events when visitors click out to your content
+
+    // Provider-specific (fill in only the one you use):
+    domain: "",                 // plausible: your data-domain (e.g. "yoursite.com")
+    websiteId: "",              // umami: your data-website-id
+    endpoint: "",               // goatcounter: your count endpoint (e.g. https://you.goatcounter.com/count)
+    scriptUrl: "",              // optional: self-hosted script URL (overrides the default)
+  },
+
   /* ---- Sections. Reorder them in index.html; toggle them here. ----------- */
   sections: {
     about: {
