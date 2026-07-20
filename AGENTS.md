@@ -27,6 +27,7 @@ That's the whole context you need for ~all tasks. Don't crawl the repo.
 - Writing track `accent`: `cool` | `warm`
 - Milestone `status`: `done` | `active` | `planned`
 - CTA `style`: `solid` | `ghost`
+- Analytics `provider`: `none` | `plausible` | `umami` | `goatcounter` (default `none` = disabled)
 - Experience dates: `"YYYY-MM"` strings; `end: null` means "Present". Durations are computed for you.
 - Colours: any CSS colour (hex fine). Fonts: Google Font family names.
 
@@ -70,6 +71,9 @@ npm run check      # validates config/site.config.js against the contract
 - **Add a LinkedIn/manual post:** add to a track's `posts[]` with `manual: true` (the fetcher
   preserves those; use a real `date` like `"May 2024"`).
 - **Swap the photo:** drop a file in `assets/img/`, set `identity.avatar`.
+- **Enable analytics:** set `analytics.provider` and its required field (plausible → `domain`;
+  umami → `websiteId` + `scriptUrl`; goatcounter → `endpoint`). Off by default; privacy-friendly;
+  also tracks outbound clicks to the user's content. See `docs/ANALYTICS.md`.
 
 ## Deploy (when asked)
 - **GitHub Pages:** push; ensure Settings → Pages → Source = "GitHub Actions" (workflow included).

@@ -68,6 +68,13 @@ Add this LinkedIn article to my Writing section as a manual post so the fetcher 
 <paste title + URL + date>.
 ```
 
+## 5b. Measure traffic to my content
+```
+Enable privacy-friendly analytics with Plausible for domain mysite.com, and turn on outbound
+click tracking so I can see which of my Medium/Substack/social links people actually click.
+Run `npm run check` and confirm nothing loads when it's disabled.
+```
+
 ## 6. Validate & fix
 ```
 Run `npm run check` and fix everything it reports, including clearing the leftover demo
